@@ -154,6 +154,20 @@ public final class ImageDecoder {
         return image
     }
 
+    public func isFrameComplete(at index: Int) -> Bool {
+        assert(frameCount > index)
+
+        // CGImageSourceGetStatusAtIndex() changes the return status value from kCGImageStatusIncomplete
+        // to kCGImageStatusComplete only if (index > 1 && index < frameCount() - 1). To get an accurate
+        // result for the last frame (or the single frame of the static image) use CGImageSourceGetStatus()
+        // instead for this frame.
+        if index == frameCount - 1 {
+            return CGImageSourceGetStatus(imageSource) == .statusComplete
+        }
+
+        return CGImageSourceGetStatusAtIndex(imageSource, index) == .statusComplete
+    }
+
     // MARK: - Private
 
     private static let imageSourceOptions: [CFString: Any] = [
