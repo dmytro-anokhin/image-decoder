@@ -52,7 +52,7 @@ public final class ImageDecoder {
         imageSource = CGImageSourceCreateIncremental(nil)
     }
 
-    private(set) var isAllDataReceived: Bool = false
+    public private(set) var isAllDataReceived: Bool = false
 
     public func setData(_ data: Data, allDataReceived: Bool) {
         assert(!isAllDataReceived)
