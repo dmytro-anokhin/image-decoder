@@ -37,11 +37,7 @@ extension ImageDecoder {
     }
 
     public var uiImage: UIImage? {
-        guard frameCount > 0 else {
-            return nil
-        }
-
-        return createFrameUIImage(at: 0)
+        frameCount > 0 ? createFrameUIImage(at: 0) : nil
     }
 
     private func createFrameUIImage(at index: Int, subsamplingLevel: SubsamplingLevel = .default, decodingOptions: DecodingOptions = .default) -> UIImage? {
