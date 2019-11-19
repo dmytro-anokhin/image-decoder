@@ -6,11 +6,13 @@ This pacakge is handy if you need to:
 - Incrementally load an image;
 - Decode animated images.
 
-`ImageDecoder` supports animated images in GIF, APNG, and HEICS formats.
+**ImageDecoder** supports animated images in GIF, APNG, and HEICS formats.
 
 ## Usage
 
-If you have the complete image data you can create `ImageDecoder` and set it, `allDataReceived` indicates if the image data is complete:
+Use [Swift Package Manager integration in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) to install **ImageDecoder**.
+
+If you have the complete image data you can create `ImageDecoder` object and set it, `allDataReceived` indicates if the image data is complete:
 
 ```swift
 let imageDecoder = ImageDecoder()
@@ -121,6 +123,6 @@ Decoding an animated image can sometimes be slow because each frame must be deco
 
 ## Misc
 
-If you found a bug or need additional feature open an issue.
+If you found a bug, have a feature request, or want to contribute - please open an issue.
 
 Make sure to check out [URLImage](https://github.com/dmytro-anokhin/url-image) package if you need to dowload and display an image in SwiftUI. For updates on this and other packages follow me on Twitter: [dmytroanokhin](https://twitter.com/dmytroanokhin).
