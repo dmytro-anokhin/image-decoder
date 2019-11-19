@@ -1,5 +1,5 @@
 //
-//  ImageDecoderCG.swift
+//  ImageDecoder.swift
 //
 //
 //  Created by Dmytro Anokhin on 16/11/2019.
