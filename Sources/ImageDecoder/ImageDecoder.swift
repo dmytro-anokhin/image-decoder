@@ -67,6 +67,10 @@ public final class ImageDecoder {
         CGImageSourceUpdateDataProvider(imageSource, dataProvider, allDataReceived)
     }
 
+    public var uti: String? {
+        CGImageSourceGetType(imageSource) as String?
+    }
+
     public var frameCount: Int {
         CGImageSourceGetCount(imageSource)
     }
